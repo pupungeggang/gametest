@@ -4,7 +4,7 @@ window.onerror = errorHandle;
 function main() {
     canvas = document.getElementById('game');
     context = canvas.getContext('2d');
-    canvasRect = cavnas.getBoundingClientRect();
+    canvasRect = canvas.getBoundingClientRect();
 
     canvas.addEventListener('mouseup', mouseUp, false);
 
@@ -16,5 +16,20 @@ function errorHandle() {
 }
 
 function loop() {
+    if (scene === 'Title') {
+        loopTitle();
+    } else if (scene === 'SaveSelect') {
+        loopSaveSelect();
+    }
+}
 
+function mouseUp(event) {
+    var x = event.clientX - canvasRect.left;
+    var y = event.clientY - canvasRect.top;
+
+    if (scene === 'Title') {
+        mouseUpTitle(x, y);
+    } else if (scene === 'SaveSelect') {
+        mouseUpSaveSelect(x, y);
+    }
 }
