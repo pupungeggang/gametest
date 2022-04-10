@@ -3,6 +3,8 @@ import pygame
 
 import var
 
+import title
+
 pygame.init()
 
 clock = pygame.time.Clock()
@@ -15,7 +17,7 @@ def loop():
     while 1:
         clock.tick(var.FPS)
         input_handle()
-        display()
+        scene_loop()
 
 def input_handle():
     for event in pygame.event.get():
@@ -26,8 +28,9 @@ def input_handle():
             mouse = pygame.mouse.get_pos()
             print(mouse)
 
-def display():
-    pass
+def scene_loop():
+    if var.scene == 'title':
+        title.loop()
 
 init()
 loop()
