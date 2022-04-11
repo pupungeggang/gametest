@@ -8,6 +8,9 @@ function main() {
 
     canvas.addEventListener('mouseup', mouseUp, false);
 
+    saveInit();
+    imageLoad();
+
     gameInstance = setInterval(loop, 25);
 }
 

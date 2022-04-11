@@ -1,13 +1,13 @@
 function saveInit() {
     if (localStorage.getItem('Desserterria-RPG') === null || localStorage.getItem('Desserterria-RPG') === '[object Object]') {
-        localStorage.setItem('Desserterria-RPG', JSON.toString(emptySave));
+        localStorage.setItem('Desserterria-RPG', JSON.stringify(emptySave));
     }
 
     loadData();
 }
 
 function saveData() {
-    localStorage.setItem('Desserterria-RPG', JSON.toString(save));
+    localStorage.setItem('Desserterria-RPG', JSON.stringify(save));
 }
 
 function loadData() {
@@ -15,7 +15,7 @@ function loadData() {
 }
 
 function startNewGame() {
-    
+
 }
 
 function loadField() {
