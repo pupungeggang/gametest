@@ -1,0 +1,7 @@
+var mapData = {
+
+};
+
+var cardData = {
+
+};
